@@ -55,20 +55,26 @@ nav ul li a {
 
 .menu-section-div {
     background-color: var(--background-color-lighter);
-    font-size: xx-large;
-    display: flex;
-    align-content: space-between;
+    font-size: x-large;
+    padding: 5% 0;
 }
 
 .menu-section-div h3 {
-    
+    width: 33%;
+    padding: 5% 0;
+    margin: 0;
 }
 
 .menu-section-div p {
-    
+    width: 33%;
+    padding: 5% 0;
+    margin: 0;
+    font-size: large;
 }
 
 .menu-section-div img {
     width: 33%;
     height: min-content;
+    padding: 5% 0;
+    margin: 0;
 }

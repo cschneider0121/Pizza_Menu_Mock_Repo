@@ -36,6 +36,7 @@ Object.entries(menuData).forEach(([category]) => {
     button.ariaControls = `${category}-section`;
     button.ariaExpanded = "false";
     button.textContent = category.replace(/([A-Z])/g, " $1").toUpperCase(); // converts category name to readable string with all uppercase letters
+    button.textContent = button.textContent + " +";
     categoryWrapper.appendChild(button);
 
     const section = document.createElement("div");
@@ -80,7 +81,8 @@ menuSectionDivs.forEach(menuSectionDiv => {
 
 // set button functionality
 menuSectionButtons.forEach(menuSectionButton => {
-    menuSectionButton.addEventListener("click", () => {
+    menuSectionButton.addEventListener("click", (event) => {
+        const button = event.target;
         const targetId = menuSectionButton.dataset.target;
         const section = document.getElementById(targetId);
         console.log(`button clicked: ${targetId} ${section}`);
@@ -89,9 +91,11 @@ menuSectionButtons.forEach(menuSectionButton => {
         const isOpen = getComputedStyle(section).display === "block";
         if (isOpen) {
             section.style.display = "none";
+            button.textContent = button.textContent.slice(0, -1) + "+";
         }
         else {
             section.style.display = "block";
+            button.textContent = button.textContent.slice(0, -1) + "-";
         }
 
         menuSectionButton.setAttribute("aria-expanded", String(!isOpen));
