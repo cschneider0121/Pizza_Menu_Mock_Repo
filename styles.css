@@ -1,11 +1,14 @@
 :root {
     --background-color: #dfddd7;
+    --background-color-lighter: #f6f5f5;
+    --nav-red: #dd0000;
 }
 
 body {
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
+    font-family: 'Courier New', Courier, monospace;
 }
 
 /* NAV BAR */
@@ -19,7 +22,7 @@ nav ul {
 
 nav ul li {
     width: 100%;
-    background-color: red;
+    background-color: var(--nav-red);
     padding: 2%;
 }
 
@@ -34,5 +37,38 @@ nav ul li {
 nav ul li a {
     color: white;
     font-size: xx-large;
-}   
+}
 
+/* MENU SECTION */
+
+.menu-section-button {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-size: x-large;
+    width: 100%;
+    padding: 5% 0;
+    margin: 0;
+    background-color: white;
+    border: white;
+    cursor: pointer;
+}
+
+.menu-section-div {
+    background-color: var(--background-color-lighter);
+    font-size: xx-large;
+    display: flex;
+    align-content: space-between;
+}
+
+.menu-section-div h3 {
+    
+}
+
+.menu-section-div p {
+    
+}
+
+.menu-section-div img {
+    width: 33%;
+    height: min-content;
+}

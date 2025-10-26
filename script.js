@@ -10,12 +10,15 @@ class menuItem {
 
 const menuData = {
     specialtyPizza: [
-        new menuItem("Meat Lovers", "mmmm yummy meaty yumyum", "placeholder/image/path"),
-        new menuItem("Veggie Delight", "You like veggies? Great! Yummy veggie yum yum", "placeholder/image/path")
+        new menuItem("Meat Lovers", "Pepperoni, Sausage, Bacon, you're gunna want seconds.", "../Resources/Images/meat_lovers.jpg"),
+        new menuItem("Veggie Delight", "Tomatoes, Green Peppers, Black Olives and Mushrooms. Veggie lovers, this one's for you.", "../Resources/Images/veggie_delight.jpg")
+    ],
+    buildYourOwnPizza: [
+        new menuItem("Make it your own!", "Choose between our toppings!", "../Resources/Images/build-your-own.jpg")
     ],
     pasta: [
-        new menuItem("Spaghetti", "new le sserafim album?", "placeholder/image/path"),
-        new menuItem("Alfredo", "Creamy yummy white pasta saucy goodness", "placeholder/image/path")
+        new menuItem("Spaghetti", "Who doesn't love Spaghetti?", "../Resources/Images/spaghetti.jpg"),
+        new menuItem("Alfredo", "Creamy, yummy, white pasta sauce Alfredo. Get your fix.", "../Resources/Images/alfredo.jpg")
     ]
 }
   
@@ -33,12 +36,6 @@ Object.entries(menuData).forEach(([category]) => {
     button.ariaControls = `${category}-section`;
     button.ariaExpanded = "false";
     button.textContent = category.replace(/([A-Z])/g, " $1").toUpperCase(); // converts category name to readable string with all uppercase letters
-    button.style.fontSize = "x-large";
-    button.style.width = "100%";
-    button.style.padding = "5% 0";
-    button.style.margin = "0";
-    button.style.border = "white";
-    button.style.cursor = "pointer";
     categoryWrapper.appendChild(button);
 
     const section = document.createElement("div");
