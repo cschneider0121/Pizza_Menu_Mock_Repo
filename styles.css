@@ -69,17 +69,16 @@ nav ul li a {
 .menu-section-div h4 {
     color: var(--nav-red);
     padding: 0;
-    margin: 0;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 .menu-item-title-price-container {
     display: flex;
 }
 
-.menu-item-title-description-container {
+.menu-item-title-price-description-container {
     display: block;
-    width: 25%;
+    width: 50%;
     margin-right: auto;
     margin-left: 1%;
 }
