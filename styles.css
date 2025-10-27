@@ -92,7 +92,7 @@ nav ul li a {
 
 .menu-section-div img {
     width: 40%;
-    height: min-content;
+    max-height: 100%;
     padding: 0;
     margin: 0;
     margin-left: auto;
