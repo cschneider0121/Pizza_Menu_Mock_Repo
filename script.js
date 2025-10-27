@@ -1,8 +1,9 @@
 // MENU DATA
 
 class menuItem {
-    constructor(name, description, imagePath) {
+    constructor(name, price, description, imagePath) {
         this.name = name;
+        this.price = price;
         this.description = description;
         this.imagePath = imagePath;
     }
@@ -10,15 +11,15 @@ class menuItem {
 
 const menuData = {
     specialtyPizza: [
-        new menuItem("Meat Lovers", "Pepperoni, Sausage, Bacon, you're gunna want seconds.", "../Resources/Images/meat_lovers.jpg"),
-        new menuItem("Veggie Delight", "Tomatoes, Green Peppers, Black Olives and Mushrooms. Veggie lovers, this one's for you.", "../Resources/Images/veggie_delight.jpg")
+        new menuItem("Meat Lovers", 18, "Pepperoni, Sausage, Bacon, you're gunna want seconds.", "../Resources/Images/meat_lovers.jpg"),
+        new menuItem("Veggie Delight", 16, "Tomatoes, Green Peppers, Black Olives and Mushrooms. Veggie lovers, this one's for you.", "../Resources/Images/veggie_delight.jpg")
     ],
     buildYourOwnPizza: [
-        new menuItem("Make it your own!", "Choose between our toppings!", "../Resources/Images/build-your-own.jpg")
+        new menuItem("Make it your own!", 12, "Choose between our toppings! .50+ per topping.", "../Resources/Images/build-your-own.jpg")
     ],
     pasta: [
-        new menuItem("Spaghetti", "Who doesn't love Spaghetti?", "../Resources/Images/spaghetti.jpg"),
-        new menuItem("Alfredo", "Creamy, yummy, white pasta sauce Alfredo. Get your fix.", "../Resources/Images/alfredo.jpg")
+        new menuItem("Spaghetti", 13, "Who doesn't love Spaghetti?", "../Resources/Images/spaghetti.jpg"),
+        new menuItem("Alfredo", 14, "Creamy, yummy, white pasta sauce Alfredo. Get your fix.", "../Resources/Images/alfredo.jpg")
     ]
 }
   
@@ -56,10 +57,20 @@ const fillMenuSectionDiv = (menuSectionDiv) => {
     const menuDataItems = menuData[key] || [];
     menuDataItems.forEach(menuItem => {
         const menuItemDiv = document.createElement('div');
+        menuItemDiv.className = "menu-item-div";
+
+        const menuItemTitlePriceContainer = document.createElement('div');
+        menuItemTitlePriceContainer.className = "menu-item-title-price-container";
 
         const menuItemTitle = document.createElement('h3');
         menuItemTitle.textContent = menuItem.name; 
-        menuItemDiv.appendChild(menuItemTitle);
+        menuItemTitlePriceContainer.appendChild(menuItemTitle);
+
+        const menuItemPrice = document.createElement('h4');
+        menuItemPrice.textContent = menuItem.price;
+        menuItemTitlePriceContainer.appendChild(menuItemPrice);
+
+        menuItemDiv.appendChild(menuItemTitlePriceContainer);
 
         const menuItemDescription = document.createElement('p');
         menuItemDescription.textContent = menuItem.description;
@@ -69,8 +80,6 @@ const fillMenuSectionDiv = (menuSectionDiv) => {
         menuItemImage.src = menuItem.imagePath;
         menuItemDiv.appendChild(menuItemImage);
 
-        menuItemDiv.style.width = "100%";
-        menuItemDiv.style.display = "flex";
         menuSectionDiv.appendChild(menuItemDiv);
     })
 }
