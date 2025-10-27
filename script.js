@@ -70,11 +70,15 @@ const fillMenuSectionDiv = (menuSectionDiv) => {
         menuItemPrice.textContent = menuItem.price;
         menuItemTitlePriceContainer.appendChild(menuItemPrice);
 
-        menuItemDiv.appendChild(menuItemTitlePriceContainer);
+        const menuItemTitlePriceDescriptionContainer = document.createElement('div');
+        menuItemTitlePriceDescriptionContainer.className = "menu-item-title-price-description-container";
+        menuItemTitlePriceDescriptionContainer.appendChild(menuItemTitlePriceContainer);
 
         const menuItemDescription = document.createElement('p');
         menuItemDescription.textContent = menuItem.description;
-        menuItemDiv.appendChild(menuItemDescription);
+        menuItemTitlePriceDescriptionContainer.appendChild(menuItemDescription);
+
+        menuItemDiv.appendChild(menuItemTitlePriceDescriptionContainer);
 
         const menuItemImage = document.createElement('img');
         menuItemImage.src = menuItem.imagePath;
