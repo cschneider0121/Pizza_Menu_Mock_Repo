@@ -11,7 +11,7 @@ class menuItem {
 
 const menuData = {
     specialtyPizza: [
-        new menuItem("Meat Lovers", 18, "Pepperoni, Sausage, Bacon, you're gunna want seconds.", "../Resources/Images/meat_lovers.jpg"),
+        new menuItem("Meat Lovers", 18, "Pepperoni, Sausage, Bacon, you're gonna want seconds.", "../Resources/Images/meat_lovers.jpg"),
         new menuItem("Veggie Delight", 16, "Tomatoes, Green Peppers, Black Olives and Mushrooms. Veggie lovers, this one's for you.", "../Resources/Images/veggie_delight.jpg")
     ],
     buildYourOwnPizza: [
@@ -20,6 +20,11 @@ const menuData = {
     pasta: [
         new menuItem("Spaghetti", 13, "Who doesn't love Spaghetti?", "../Resources/Images/spaghetti.jpg"),
         new menuItem("Alfredo", 14, "Creamy, yummy, white pasta sauce Alfredo. Get your fix.", "../Resources/Images/alfredo.jpg")
+    ],
+    drinks: [
+        new menuItem("Coke", 2, "Classic Coca-cola.", ""),
+        new menuItem("Diet Coke", 2, "Favorite Diet Soda", ""),
+        new menuItem("Fanta Orange", 2.50, "Orange Delicious", "")
     ]
 }
   
@@ -80,10 +85,11 @@ const fillMenuSectionDiv = (menuSectionDiv) => {
 
         menuItemDiv.appendChild(menuItemTitlePriceDescriptionContainer);
 
-        const menuItemImage = document.createElement('img');
-        menuItemImage.src = menuItem.imagePath;
-        menuItemDiv.appendChild(menuItemImage);
-
+        if (menuItem.imagePath.length > 0) { // make sure image path exists before creating image element, otherwise dont make an image element at all
+            const menuItemImage = document.createElement('img');
+            menuItemImage.src = menuItem.imagePath;
+            menuItemDiv.appendChild(menuItemImage);
+        }
         menuSectionDiv.appendChild(menuItemDiv);
     })
 }
