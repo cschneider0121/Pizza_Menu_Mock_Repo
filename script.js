@@ -1,7 +1,7 @@
 // MENU DATA
 
 class menuItem {
-    constructor(name, price, description, imagePath) {
+    constructor(name, price, description, imagePath = "") {
         this.name = name;
         this.price = price;
         this.description = description;
@@ -22,9 +22,9 @@ const menuData = {
         new menuItem("Alfredo", 14, "Creamy, yummy, white pasta sauce Alfredo. Get your fix.", "../Resources/Images/alfredo.jpg")
     ],
     drinks: [
-        new menuItem("Coke", 2, "Classic Coca-cola.", ""),
-        new menuItem("Diet Coke", 2, "Favorite Diet Soda", ""),
-        new menuItem("Fanta Orange", 2.50, "Orange Delicious", "")
+        new menuItem("Coke", 2, "Classic Coca-cola."),
+        new menuItem("Diet Coke", 2, "Favorite Diet Soda"),
+        new menuItem("Fanta Orange", 2.50, "Orange Delicious")
     ]
 }
   
